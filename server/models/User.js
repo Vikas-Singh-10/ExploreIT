@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         require: true,
         max: 50,
-        unique: true
+        unique: true,
     },
     password: {
         type: String,
@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
     },
     location: String,
     occupation: String,
-    viewdProfile: Number,
+    viewedProfile: Number,
     impressions: Number
 
 },{
