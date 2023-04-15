@@ -25,7 +25,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
 import FlexBetween from "components/FlexBetween";
 import { useNavigate } from "react-router-dom";
-import Tilt from "react-parallax-tilt";
+// import Tilt from "react-parallax-tilt";
 
 const NavBar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);

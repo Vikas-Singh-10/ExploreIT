@@ -12,6 +12,7 @@ const LoginPage = () => {
           ExploreIT
         </Typography>
       </Box>
+      <Form/>
       <Box 
       width={isNonMobileScreens ? "50%" : "93%"}
       p="2rem"

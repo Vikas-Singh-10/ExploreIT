@@ -206,7 +206,7 @@ const Form = () => {
                         p="1rem"
                         sx={{ "&:hover": { cursor: "pointer" } }}
                       >
-                        <input {...getInputProps()}>
+                        <input {...getInputProps()} />
                           {!values.picture ? (
                             <p>Drop your PFP Here</p>
                           ) : (
@@ -215,7 +215,6 @@ const Form = () => {
                               <EditOutlinedIcon />
                             </FlexBetween>
                           )}
-                        </input>
                       </Box>
                     )}
                   </Dropzone>
