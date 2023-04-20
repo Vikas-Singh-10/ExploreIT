@@ -128,6 +128,7 @@ const Form = () => {
             display="grid"
             gap="30px"
             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+            boxShadow="#d3d3d3"
             sx={{
               "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
             }}

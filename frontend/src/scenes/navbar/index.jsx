@@ -17,7 +17,6 @@ import {
   DarkMode,
   LightMode,
   Notifications,
-  HelpMenu,
   Close,
   Help,
 } from "@mui/icons-material";
@@ -101,8 +100,17 @@ const NavBar = () => {
                   pr: "0.25rem",
                   width: "3rem",
                 },
+                "& .MuiSelect-select:focus":{
+                  backgroundColor: neutralLight
+                }
               }}
-            ></Select>
+              input={<InputBase />}
+            >
+              <MenuItem value={fullName}>
+                <Typography>{fullName}</Typography>
+              </MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
+            </Select>
           </FormControl>
         </FlexBetween>
       ) : (
@@ -165,6 +173,9 @@ const NavBar = () => {
                     pr: "0.25rem",
                     width: "3rem",
                   },
+                  "& .MuiSelect-select:focus": {
+                    backgroundColor: neutralLight,
+                  }
                 }}
                 input={<InputBase />}
               >

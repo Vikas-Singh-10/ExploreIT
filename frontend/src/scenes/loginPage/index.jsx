@@ -18,7 +18,7 @@ const LoginPage = () => {
           textAlign="center"
         >
           <Tilt>
-            <div backgroundColor="blue">
+            <div color="#d3d3d3">
               <Typography fontWeight="bold" fontSize="32px" color="primary">
                 ExploreIT
               </Typography>
