@@ -24,13 +24,20 @@ const AdvertWidget = () => {
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
       <FlexBetween>
-        <Typography color={main}>MikaCosmetics</Typography>
-        <Typography color={medium}>mikacosmetics.com</Typography>
+        <Typography color={main}>One Piece</Typography>
+        <Typography color={medium}>Zoro.to</Typography>
       </FlexBetween>
       <Typography color={medium} m="0.5rem 0">
-        Your pathway to stunning and immaculate beauty and made sure your skin
-        is exfoliating skin and shining like light.
+        The series focuses on Monkey D. Luffy—a young man made of rubber after
+        unintentionally eating a Devil Fruit—who sets off on a journey from the
+        East Blue Sea to find the deceased King of the Pirates Gol D. Roger's
+        ultimate treasure known as the "One Piece", and takeover his prior
+        title.
       </Typography>
+      <Typography color={medium} m="0.5rem 0">
+        Go watch now !
+      </Typography>
+
     </WidgetWrapper>
   );
 };

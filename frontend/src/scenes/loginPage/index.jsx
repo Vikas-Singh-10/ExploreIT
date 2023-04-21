@@ -9,10 +9,10 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Design />
+      
       <Box>
         <Box
-          width="80%"
+          width="100%"
           backgroundColor={theme.palette.background.alt}
           p="1rem 6%"
           textAlign="center"
@@ -39,6 +39,7 @@ const LoginPage = () => {
           <Form />
         </Box>
       </Box>
+      <Design />
     </div>
   );
 };

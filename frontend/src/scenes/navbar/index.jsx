@@ -74,7 +74,7 @@ const NavBar = () => {
         )}
       </FlexBetween>
 
-      {/* ---> Desktop NavBar */}
+     
 
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
@@ -121,7 +121,7 @@ const NavBar = () => {
         </IconButton>
       )}
 
-      {/* --> Mobile Navbar  */}
+      
 
       {!isNonMobileScreens && isMobileMenuToggled && (
         <Box
