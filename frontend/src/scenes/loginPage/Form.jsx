@@ -19,10 +19,7 @@ import FlexBetween from "components/FlexBetween";
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
-  email: yup
-    .string()
-    .email("invalid email")
-    .required("required"),
+  email: yup.string().email("invalid email").required("required"),
   password: yup.string().required("required"),
   location: yup.string().required("required"),
   occupation: yup.string().required("required"),
@@ -30,10 +27,7 @@ const registerSchema = yup.object().shape({
 });
 
 const loginSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email("invalid email")
-    .required("required"),
+  email: yup.string().email("invalid email").required("required"),
   password: yup.string().required("required"),
 });
 
@@ -62,6 +56,7 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
+    // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
@@ -103,8 +98,8 @@ const Form = () => {
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
-    if (isLogin) await loginSchema(values, onSubmitProps);
-    if (isRegister) await registerSchema(values, onSubmitProps);
+    if (isLogin) await login(values, onSubmitProps);
+    if (isRegister) await register(values, onSubmitProps);
   };
 
   return (
@@ -128,7 +123,6 @@ const Form = () => {
             display="grid"
             gap="30px"
             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-            boxShadow="#d3d3d3"
             sx={{
               "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
             }}
@@ -145,9 +139,7 @@ const Form = () => {
                     Boolean(touched.firstName) && Boolean(errors.firstName)
                   }
                   helperText={touched.firstName && errors.firstName}
-                  sx={{
-                    gridColumn: "span 2",
-                  }}
+                  sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
                   label="Last Name"
@@ -157,9 +149,7 @@ const Form = () => {
                   name="lastName"
                   error={Boolean(touched.lastName) && Boolean(errors.lastName)}
                   helperText={touched.lastName && errors.lastName}
-                  sx={{
-                    gridColumn: "span 2",
-                  }}
+                  sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
                   label="Location"
@@ -169,9 +159,7 @@ const Form = () => {
                   name="location"
                   error={Boolean(touched.location) && Boolean(errors.location)}
                   helperText={touched.location && errors.location}
-                  sx={{
-                    gridColumn: "span 4",
-                  }}
+                  sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
                   label="Occupation"
@@ -183,9 +171,7 @@ const Form = () => {
                     Boolean(touched.occupation) && Boolean(errors.occupation)
                   }
                   helperText={touched.occupation && errors.occupation}
-                  sx={{
-                    gridColumn: "span 4",
-                  }}
+                  sx={{ gridColumn: "span 4" }}
                 />
                 <Box
                   gridColumn="span 4"
@@ -208,31 +194,30 @@ const Form = () => {
                         sx={{ "&:hover": { cursor: "pointer" } }}
                       >
                         <input {...getInputProps()} />
-                          {!values.picture ? (
-                            <p>Drop your PFP Here</p>
-                          ) : (
-                            <FlexBetween>
-                              <Typography>{values.picture.name}</Typography>
-                              <EditOutlinedIcon />
-                            </FlexBetween>
-                          )}
+                        {!values.picture ? (
+                          <p>Add Picture Here</p>
+                        ) : (
+                          <FlexBetween>
+                            <Typography>{values.picture.name}</Typography>
+                            <EditOutlinedIcon />
+                          </FlexBetween>
+                        )}
                       </Box>
                     )}
                   </Dropzone>
                 </Box>
               </>
             )}
+
             <TextField
               label="Email"
               onBlur={handleBlur}
               onChange={handleChange}
-              value={values.Email}
-              name="Email"
-              error={Boolean(touched.Email) && Boolean(errors.Email)}
-              helperText={touched.Email && errors.Email}
-              sx={{
-                gridColumn: "span 4",
-              }}
+              value={values.email}
+              name="email"
+              error={Boolean(touched.email) && Boolean(errors.email)}
+              helperText={touched.email && errors.email}
+              sx={{ gridColumn: "span 4" }}
             />
             <TextField
               label="Password"
@@ -243,9 +228,7 @@ const Form = () => {
               name="password"
               error={Boolean(touched.password) && Boolean(errors.password)}
               helperText={touched.password && errors.password}
-              sx={{
-                gridColumn: "span 4",
-              }}
+              sx={{ gridColumn: "span 4" }}
             />
           </Box>
 
@@ -278,8 +261,8 @@ const Form = () => {
               }}
             >
               {isLogin
-                ? "New User? Register here."
-                : "Already have an account? Login here"}
+                ? "Don't have an account? Sign Up here."
+                : "Already have an account? Login here."}
             </Typography>
           </Box>
         </form>

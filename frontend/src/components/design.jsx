@@ -41,7 +41,7 @@ const Design = () => {
                     },
                     modes: {
                         push: {
-                            quantity: 4,
+                            quantity: 2,
                         },
                         repulse: {
                             distance: 200,
@@ -57,7 +57,7 @@ const Design = () => {
                         color: "#d3d3d3",
                         distance: 150,
                         enable: true,
-                        opacity: 0.5,
+                        opacity: 0.2,
                         width: 1,
                     },
                     collisions: {
@@ -70,7 +70,7 @@ const Design = () => {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 2,
+                        speed: 1,
                         straight: false,
                     },
                     number: {
