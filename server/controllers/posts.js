@@ -28,7 +28,7 @@ export const createPost = async (req, res) => {
 
 export const getFeedPosts = async (req, res) => {
   try {
-    const post = await Post.find();
+    const post = await Post.find().sort({"updatedAt":-1});
 
     res.status(200).json(post);
   } catch (err) {
