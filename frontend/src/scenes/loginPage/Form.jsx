@@ -242,7 +242,8 @@ const Form = () => {
               sx={{
                 m: "2rem 0",
                 p: "1rem",
-                backgroundColor: palette.primary.mus,
+                backgroundColor: '#EAAA00',
+                fontSize: 16,
                 color: palette.background.alt,
                 "&:hover": { color: palette.primary.mus },
               }}

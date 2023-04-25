@@ -15,6 +15,7 @@ const LoginPage = () => {
         backgroundImage: `url(${socializeBackground})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        
       }}
     >
       <Box position="relative" zIndex={1} flex={1}>
