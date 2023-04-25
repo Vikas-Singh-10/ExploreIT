@@ -158,8 +158,8 @@ import {
             disabled={!post}
             onClick={handlePost}
             sx={{
-              color: palette.background.alt,
-              backgroundColor: palette.primary.main,
+              color:'#116466',
+              backgroundColor: palette.primary.mus,
               borderRadius: "3rem",
             }}
           >

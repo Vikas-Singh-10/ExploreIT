@@ -1,46 +1,45 @@
-import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery, Paper } from "@mui/material";
 import Form from "./Form";
 import Design from "components/design";
-import Tilt from "react-parallax-tilt";
+import socializeBackground from "./back.png"
 
 const LoginPage = () => {
-  const theme = useTheme();
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   return (
-    <div>
-      
-      <Box>
+    <Box
+      minHeight="100vh"
+      display="flex"
+      flexDirection="column"
+      sx={{
+        backgroundImage: `url(${socializeBackground})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <Box position="relative" zIndex={1} flex={1}>
+        <Design />
+      </Box>
+
+      <Box flex={2} display="flex" flexDirection="column" alignItems="center">
         <Box
-          width="100%"
-          backgroundColor={theme.palette.background.alt}
-          p="1rem 6%"
-          textAlign="center"
-        >
-          <Tilt>
-            <div color="#d3d3d3">
-              <Typography fontWeight="bold" fontSize="32px" color="primary">
-                ExploreIT
-              </Typography>
-            </div>
-          </Tilt>
-        </Box>
-        
-        <Box
-          width={isNonMobileScreens ? "50%" : "93%"}
-          p="2rem"
-          m="2rem auto"
+          width={isNonMobileScreens ? "35%" : "80%"}
+          p={4}
+          m={2}
           borderRadius="1.5rem"
-          backgroundColor={theme.palette.background.alt}
+          component={Paper}
+          elevation={4}
         >
-          <Typography fontWeight="500" variant="h5" sx={{mb: "1.5rem"}}>
-            Explore it, Enjoy it !!
+          <Typography variant="h4" align="center" gutterBottom style={{fontWeight: "bold", color: "#116466"}}>
+            Welcome to ExploreIT
+          </Typography>
+          <Typography variant="subtitle1" align="center" gutterBottom>
+            Please sign in to continue
           </Typography>
           <Form />
         </Box>
       </Box>
-      <Design />
-    </div>
+    </Box>
   );
 };
 

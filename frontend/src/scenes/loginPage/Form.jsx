@@ -16,6 +16,8 @@ import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
+
+
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
@@ -240,9 +242,9 @@ const Form = () => {
               sx={{
                 m: "2rem 0",
                 p: "1rem",
-                backgroundColor: palette.primary.main,
+                backgroundColor: palette.primary.mus,
                 color: palette.background.alt,
-                "&:hover": { color: palette.primary.main },
+                "&:hover": { color: palette.primary.mus },
               }}
             >
               {isLogin ? "LOGIN" : "REGISTER"}
@@ -254,12 +256,14 @@ const Form = () => {
               }}
               sx={{
                 textDecoration: "underline",
-                color: palette.primary.main,
+                color: '#116466',
                 "&:hover": {
                   cursor: "pointer",
-                  color: palette.primary.light,
+                  color: '#188f92',
                 },
+                
               }}
+              align="center"
             >
               {isLogin
                 ? "Don't have an account? Sign Up here."

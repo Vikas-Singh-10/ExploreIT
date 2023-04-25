@@ -38,12 +38,11 @@ const NavBar = () => {
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
-  const alt = theme.palette.background.alt;
 
   const fullName = `${user.firstName} ${user.lastName}`;
 
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+    <FlexBetween padding="1rem 6%" backgroundColor='#116466'>
       <FlexBetween gap="1.75 rem">
         <Typography
           fontWeight="bold"
@@ -63,7 +62,7 @@ const NavBar = () => {
           <FlexBetween
             backgroundColor={neutralLight}
             borderRadius="9px"
-            gap="3rem"
+            gap="2rem"
             padding="0.1rem 1.5rem"
           >
             <InputBase placeholder="Search..." />
@@ -93,9 +92,10 @@ const NavBar = () => {
               value={fullName}
               sx={{
                 backgroundColor: neutralLight,
-                width: "150px",
+                width: "160px",
                 borderRadius: "0.25rem",
                 p: "0.25rem 1rem",
+                
                 "& .MuiSvgIcon-root": {
                   pr: "0.25rem",
                   width: "3rem",
