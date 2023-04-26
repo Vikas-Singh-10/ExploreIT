@@ -25,9 +25,9 @@ const HomePage = () => {
       >
         {isNonMobileScreens && (
           <Box flexBasis="26%">
-            <AdvertWidget class="sticky" />
+            <AdvertWidget style={{ position: "sticky", top: "60px" }} />
             <Box m="2rem 0" />
-            <FriendListWidget userId={_id} />
+            <FriendListWidget style={{ position: "sticky", top: "60px" }} userId={_id} />
           </Box>
         )}
         <Box flexBasis={isNonMobileScreens ? "42%" : undefined} mt={isNonMobileScreens ? undefined : "2rem"}>
