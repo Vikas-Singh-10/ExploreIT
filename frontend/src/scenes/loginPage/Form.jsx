@@ -243,7 +243,7 @@ const Form = () => {
                 m: "2rem 0",
                 p: "1rem",
                 backgroundColor: '#EAAA00',
-                fontSize: 16,
+                fontSize: 14,
                 color: palette.background.alt,
                 "&:hover": { color: palette.primary.mus },
               }}
