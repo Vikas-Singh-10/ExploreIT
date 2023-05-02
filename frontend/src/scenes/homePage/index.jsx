@@ -16,9 +16,10 @@ const HomePage = () => {
         setSearchfield(event.target.value);
     };
 
-    const filteredPosts = posts.filter(post => {
-      return post.firstName.toLowerCase().includes(searchfield.toLowerCase());
+    const filteredPostss = posts.filter(post => {
+      return post.firstName.toLowerCase().includes(searchfield.toLowerCase()) || post.lastName.toLowerCase().includes(searchfield.toLowerCase());
 })
+
 
 
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -45,7 +46,7 @@ const HomePage = () => {
         )}
         <Box flexBasis={isNonMobileScreens ? "42%" : undefined} mt={isNonMobileScreens ? undefined : "2rem"}>
           <MyPostWidget picturePath={picturePath} />
-          <PostsWidget userId={_id} ppp={filteredPosts} />
+          <PostsWidget userId={_id} ppp={filteredPostss} />
         </Box>
         <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
           <UserWidget class="fixed" userId={_id} picturePath={picturePath} />
