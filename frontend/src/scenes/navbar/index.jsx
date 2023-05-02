@@ -56,7 +56,7 @@ const Navbar = ({searchChange}) => {
             },
           }}
         >
-          VentureSphere
+          ExploreIT
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween

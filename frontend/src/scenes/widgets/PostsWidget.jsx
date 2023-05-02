@@ -39,7 +39,7 @@ const PostsWidget = ({ userId, isProfile = false, ppp }) => {
 
   return (
     <>
-      {ppp.map(
+      {posts.map(
         ({
           _id,
           userId,
